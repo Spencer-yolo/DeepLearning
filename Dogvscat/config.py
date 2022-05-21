@@ -30,13 +30,13 @@ class DefaultConfig(object):
         for k, v in kwargs.items():
             if not hasattr(self, k): # obkect:self name:k 如果该对象有该属性k返回True
                 warnings.warn("Warning:opt has not attribut %s" %k)
-            setattr(self, k, v)
+            setattr(self, k, v)   # 重新设置属性值 属性k  值value
 
         # 打印配置信息
         print("user config:")
         for k,v in self.__class__.__dict__.items():
             if not k.startswith("__"):
-                print(k, getattr(self, k))
+                print(k, getattr(self, k))  # getattr 获取属性值
 
 
 # 在主程序中使用
