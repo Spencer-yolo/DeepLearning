@@ -33,7 +33,7 @@ class Test:
         return "repr" + self.name
 
 test = Test("simon")
-print(test.testn("spencer").testn("simon"))   # 报错 新的test.testn("spencer")不是一个实例
+# print(test.testn("spencer").testn("simon"))   # 报错 新的test.testn("spencer")不是一个实例
 
 class Test_self:
     def __init__(self, name):
@@ -62,3 +62,15 @@ class Hasattr:
 
 test_hasattr = Hasattr()
 print(hasattr(test_hasattr, "name"))
+
+# 测试 获取类的属性hasattr()  和 修改属性setattr()
+class Tom:
+    name = "simon"
+    age = "19"
+    school = "hebeishida"
+
+tom = Tom()
+if hasattr(tom, "name"):
+    setattr(Tom,"name", "Spencer")
+print(tom.name)
+print()
