@@ -28,3 +28,19 @@ class BassicModule(t.nn.Module):
             name = time.strftime(prefix + "%m%d_%H:%M:%S.pth")
         t.save(self.state_dict(), name)
         return name
+
+    def get_optimizer(self, lr, weight_decay):  # 优化器优化算法
+        return t.optim.Adam(self.parameters(), lr=lr, weight_decay=weight_decay)
+
+class Flat(t.nn.Module):
+    """
+    把输入的reshape成（batch_size,dim_length)
+    """
+
+    def __init__(self):
+        super(Flat, self).__init__()
+        #self.size = size
+
+    def forward(self, x):
+        # 转换shape
+        return x.view(x.size(0), -1)

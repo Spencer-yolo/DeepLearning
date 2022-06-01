@@ -13,6 +13,7 @@ conda换清华源
 
 pytorch 指定版本安装
 	conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
+	https://blog.csdn.net/Wenyuanbo/article/details/119382460
 Pytorch中会有相应的cudnn   
 	/envs/***/Lib/site-packages/torch/backends/cudnn
 conda 的安装的包就在site-packages中呢
