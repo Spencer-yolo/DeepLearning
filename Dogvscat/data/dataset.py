@@ -4,7 +4,6 @@ from PIL.Image import Image
 from torch.utils import data
 from torchvision import transforms as T
 
-
 class DogCat(data.Dataset):
     def __init__(self, root, transform=None, train=True, test=False):
         """
@@ -58,7 +57,7 @@ class DogCat(data.Dataset):
 
     def __getitem__(self, index): # 把dataset想像成一个列表 这个函数返回第index个样本的全部数据
         """
-        返回一张图片的数据
+        一次返回一张图片的数据
         对于测试集，没有label,返回图片id,如1000.jpg 返回1000
         :param index:
         :return:
@@ -66,7 +65,7 @@ class DogCat(data.Dataset):
 
         img_path = self.imgs[index]
         if self.test:
-            label = int(self.imgs[index].split(".").split("/")[-1])  # 测试集
+            label = int(self.imgs[index].split(".")[-2].split("/")[-1])  # 测试集
         else:  # 训练集
             label = 1 if "dog" in img_path.split("/")[-1] else 0  # 如果成立1 否则0
         data = Image.open(img_path)

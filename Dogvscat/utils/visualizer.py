@@ -33,6 +33,8 @@ class Visualizer(object):
         一次plot多个
         :param d: dict(name,value) i.e. ("loss",0.11)
         """
+        for k,v in d.items():
+            self.plot(k,v)
 
     def img_many(self, d):
         for k, v in d.items():

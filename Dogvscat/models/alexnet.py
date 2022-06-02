@@ -40,5 +40,5 @@ class AlexNet(BassicModule):
     def forward(self, x):
         x = self.features(x)
         x = x.view(x.size(0), 256*6*6)   # 改变张量的shape 对数据直接操作不是拷贝操作
-
+        x = self.classifier(x)
         return x

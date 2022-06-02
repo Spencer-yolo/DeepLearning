@@ -13,8 +13,8 @@ imgs/
 Screenshots/
 develop-eggs/
 .idea/
-dogvscat/data/test1
-dogvscat/data/train
+Dogvscat/data/test1
+Dogvscat/data/train
 dist/
 downloads/
 eggs/
